@@ -17,11 +17,11 @@ export class GetTasksUC{
             throw new UserNotFound();
         };
 
-        const tasks = await this.tasksGateway.getTasks(userInfo.id);
+        let tasks = await this.tasksGateway.getTasks(userInfo.id);
 
-        if(!tasks){
-            throw new TasksNotFound();
-        };
+        if(!tasks) {
+            tasks = []
+        }
 
         return{
             tasks: tasks.map(task => {

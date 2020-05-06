@@ -2,3 +2,5 @@
 /build
 lambda.zip
 .env
+.gitignore
+package-lock.json
